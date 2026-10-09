@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* box model */
+        .my-card {
+            padding: 15px;
+            border: 1px solid black;
+            margin: 20px auto;
+            width: 320px;
+            background: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <header style="text-align: center; padding: 10px;">
+        <h1>My Portfolio</h1>
+    </header>
+
+    <main>
+        <div id="card" class="my-card flex flex-col items-center text-center rounded shadow">
+            
+            <img src="avatar.jpg" alt="my photo" class="w-20 h-20 rounded-full mb-2 object-cover">
+            
+            <h2 class="font-bold text-lg">Akhmet Sultan</h2>
+            <p class="text-sm text-gray-600 mb-4">
+                Hello, i'm Akhmet Sultan and this is my attempt at a personal profile website. I want to learn the art and craft of constructing websites.
+            </p>
+
+            <div class="mb-3">
+                <a href="mailto:riplie8@gmail.com" class="text-blue-600 underline">Email</a> | 
+                <a href="https://github.com/riplie8" class="text-blue-600 underline">GitHub</a>
+            </div>
+
+            <button id="btn" class="bg-blue-500 text-white px-3 py-1 rounded">
+                Like
+            </button>
+        </div>
+    </main>
+
+    <script>
+        const btn = document.querySelector("#btn");
+        let isLiked = false;
+
+        btn.addEventListener("click", () => {
+            isLiked = !isLiked;
+            if (isLiked) {
+                btn.textContent = "Liked!";
+                btn.style.background = "red";
+            } else {
+                btn.textContent = "Like";
+                btn.style.background = "";
+            }
+        });
+    </script>
+</body>
+</html>
